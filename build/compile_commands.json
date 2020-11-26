@@ -1,17 +1,17 @@
 [
 {
   "directory": "/Users/ivan-nosar/Documents/petProjects/zippy/build",
-  "command": "/usr/bin/clang++  -I/Users/ivan-nosar/Documents/petProjects/zippy/src/headers -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++17 -o CMakeFiles/zippy.dir/src/a.cpp.o -c /Users/ivan-nosar/Documents/petProjects/zippy/src/a.cpp",
-  "file": "/Users/ivan-nosar/Documents/petProjects/zippy/src/a.cpp"
-},
-{
-  "directory": "/Users/ivan-nosar/Documents/petProjects/zippy/build",
-  "command": "/usr/bin/clang++  -I/Users/ivan-nosar/Documents/petProjects/zippy/src/headers -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++17 -o CMakeFiles/zippy.dir/src/lib/sha256.cpp.o -c /Users/ivan-nosar/Documents/petProjects/zippy/src/lib/sha256.cpp",
+  "command": "/usr/bin/clang++  -I/Users/ivan-nosar/Documents/petProjects/zippy/src/headers  -g -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++17 -o CMakeFiles/zippy.dir/src/lib/sha256.cpp.o -c /Users/ivan-nosar/Documents/petProjects/zippy/src/lib/sha256.cpp",
   "file": "/Users/ivan-nosar/Documents/petProjects/zippy/src/lib/sha256.cpp"
 },
 {
   "directory": "/Users/ivan-nosar/Documents/petProjects/zippy/build",
-  "command": "/usr/bin/clang++  -I/Users/ivan-nosar/Documents/petProjects/zippy/src/headers -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++17 -o CMakeFiles/zippy.dir/src/main.cpp.o -c /Users/ivan-nosar/Documents/petProjects/zippy/src/main.cpp",
+  "command": "/usr/bin/clang++  -I/Users/ivan-nosar/Documents/petProjects/zippy/src/headers  -g -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++17 -o CMakeFiles/zippy.dir/src/lib/utils/fileUtils.cpp.o -c /Users/ivan-nosar/Documents/petProjects/zippy/src/lib/utils/fileUtils.cpp",
+  "file": "/Users/ivan-nosar/Documents/petProjects/zippy/src/lib/utils/fileUtils.cpp"
+},
+{
+  "directory": "/Users/ivan-nosar/Documents/petProjects/zippy/build",
+  "command": "/usr/bin/clang++  -I/Users/ivan-nosar/Documents/petProjects/zippy/src/headers  -g -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++17 -o CMakeFiles/zippy.dir/src/main.cpp.o -c /Users/ivan-nosar/Documents/petProjects/zippy/src/main.cpp",
   "file": "/Users/ivan-nosar/Documents/petProjects/zippy/src/main.cpp"
 }
 ]

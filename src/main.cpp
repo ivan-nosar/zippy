@@ -3,7 +3,6 @@
 #include <string>
 
 #include "include/lib/sha256.hpp"
-#include "include/lib/a.hpp"
 
 using namespace std;
 
@@ -21,9 +20,6 @@ int main(int argc, char* argv[])
         string fileHash = getHashString(filePath);
         cout << fileHash << endl << "=============================" << endl;
     }
-
-    cout << getInt() << endl;
-    cout << a() << endl;
 
     cout << endl;
 }

@@ -8,5 +8,3 @@ Makefile
 CMakeCache.txt
 cmake_install.cmake
 CMakeFiles/
-# CMake tools extension's specific folder. Needed for debug
-build/

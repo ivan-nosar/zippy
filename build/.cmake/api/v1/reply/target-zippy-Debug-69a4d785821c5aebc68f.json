@@ -25,13 +25,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 19,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 13,
+				"line" : 19,
 				"parent" : 0
 			}
 		]
@@ -42,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk"
+					"fragment" : " -g -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk"
 				},
 				{
 					"fragment" : "-std=gnu++17"
@@ -78,7 +78,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-g -g",
 				"role" : "flags"
 			},
 			{
@@ -112,13 +112,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/a.cpp",
+			"path" : "src/lib/sha256.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/lib/sha256.cpp",
+			"path" : "src/lib/utils/fileUtils.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
