@@ -1,5 +1,18 @@
-1. Какой компилятор (Миша юзает IDE - Visual Studio, Qt Creator)
-2. Какой стандарт
-3. Как организовать структуру репозитория без боли: Какой билд-системой пользоваться, примеры, бойлерплейты
-4. Какой линтер и тестовый фреймворк (gtest, clang-format)
-5. Примеры хорошего репо с нормальным кодстайлом и сеттингами дя дебага
+Google: clang-format, gtest
+
+# Development
+
+## Prerequisites
+
+CMake installed (includeing CMake CLI tools)
+
+## Local development
+
+```sh
+# This will produce the Makefile, CMakeFiles folder and a couple of
+# CMake-specific files (e.g. CMakeCache.txt). We don't need to commit them.
+cmake .
+
+# This will build the executable
+make
+```

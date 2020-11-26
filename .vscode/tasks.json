@@ -2,32 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
+            "type": "shell",
             "label": "build",
-            "command": "/usr/bin/clang++",
-            "args": [
-                "-std=c++17",
-                "-stdlib=libc++",
-                "-g",
-                "${workspaceFolder}/**/*.cpp",
-                // "`export sourceList=$({ find ${workspaceFolder} -iname '*.cpp' & find ${workspaceFolder} -iname '*.hpp'; } | cat); tr '\n' ' ' <<< $sourceList`",
-                "-o",
-                "${workspaceFolder}/${config:buildConfig.outputFolder}/${config:buildConfig.executableName}"
-            ],
+            "command": "cmake . && make",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: /usr/bin/clang++",
-            "dependsOn":[
-                "clean"
-            ],
             "presentation":{
                 "echo": true,
                 "reveal": "always",
@@ -47,14 +31,6 @@
             "dependsOn":[
                 "build"
             ],
-        },
-        {
-            "type": "shell",
-            "label": "clean",
-            "command": "rm -rf ${config:buildConfig.outputFolder}/ && mkdir ${config:buildConfig.outputFolder}/",
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
         }
     ]
 }
