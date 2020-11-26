@@ -1,3 +1,0 @@
-./src/headers/lib/sha256.hpp
-./src/lib/sha256.cpp
-./src/main.cpp
