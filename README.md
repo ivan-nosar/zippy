@@ -11,8 +11,7 @@ Google: clang-format, gtest
 ```sh
 # This will produce the Makefile, CMakeFiles folder and a couple of
 # CMake-specific files (e.g. CMakeCache.txt). We don't need to commit them.
-cmake .
-
-# This will build the executable
-make
+# This command will also build the executable so we don't need to execute
+# the platform-specific build command explicitly
+cmake --build .
 ```

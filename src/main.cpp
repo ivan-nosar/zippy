@@ -9,10 +9,10 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     vector<string> files = vector<string> {
-        ".testFiles/file.json",
-        // ".testFiles/file.jpeg",
-        // ".testFiles/file.png",
-        // ".testFiles/file.mp4",
+        "/Users/ivan-nosar/Documents/petProjects/zippy/testFiles/file.json",
+        // "/Users/ivan-nosar/Documents/petProjects/zippy/testFiles/file.jpeg",
+        // "/Users/ivan-nosar/Documents/petProjects/zippy/testFiles/file.png",
+        // "/Users/ivan-nosar/Documents/petProjects/zippy/testFiles/file.mp4",
     };
 
     for (string& filePath : files) {
