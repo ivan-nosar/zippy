@@ -1,12 +1,15 @@
-Google: clang-format, gtest
+# Zippy
 
-# Development
+A pet project oriented on learning of common software algorithms: hashing, compressing, encryption.
+Written on C++ using the standard library only.
 
-## Prerequisites
+## Development
+
+### Prerequisites
 
 - CMake installed (includeing CMake CLI tools)
 
-## Local development
+### Local development
 
 ```sh
 # This will produce the Makefile, CMakeFiles folder and a couple of
