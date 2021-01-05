@@ -4,4 +4,6 @@
 
 using namespace std;
 
-string getHashString(string filePath);
+namespace sha2 {
+    string sha256(string filePath);
+}
