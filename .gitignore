@@ -1,5 +1,6 @@
 out/
 testFiles/
+randomTestFiles/
 
 .DS_Store
 

@@ -3,6 +3,18 @@ const path = require("path");
 const cp = require('child_process');
 
 const usePredefined = process.argv.some(arg => arg === "-pd" || arg === "--predefined");
+const algorithmFlagIndex = process.argv.findIndex(arg => arg === "-a" || arg === "--algorithm");
+if (algorithmFlagIndex === -1 || !process.argv[algorithmFlagIndex + 1]) {
+    console.error("The algorithm must be provided. For example: -a sha256");
+    return 1;
+}
+const algorithm = process.argv[algorithmFlagIndex + 1];
+
+const standardAlgorithmCommands = {
+    "sha256": { command: "/usr/local/bin/shasum -a 256", parser: (output) => output.split("  ")[0].trim() },
+    "md5": { command: "/sbin/md5", parser: (output) => output.split(" = ")[1].trim() }
+}
+
 if (usePredefined) {
     console.log("Running predefined tests");
     runPredefinedTests()
@@ -22,17 +34,19 @@ async function runPredefinedTests() {
         console.log(`Testing the ${filePath}`);
 
         // Execute standard utility
-        const standardOutput = cp.execSync(`/usr/local/bin/shasum -a 256 ${filePath}`).toString("utf-8");
+        const standardOutput = standardAlgorithmCommands[algorithm].parser(
+            cp.execSync(`${standardAlgorithmCommands[algorithm].command} ${filePath}`).toString("utf-8").split("  ")[0]
+        );
 
         // Execute zippy
-        const zippyOutput = cp.execSync(`out/zippy ${filePath}`).toString("utf-8");
+        const zippyOutput = cp.execSync(`out/zippy ${algorithm} ${filePath}`).toString("utf-8").trim();
 
         // Comparing the results
         if (standardOutput !== zippyOutput) {
             assertions.push({
                 file: `${filePath}`,
-                expectedHash: standardOutput.split("  ")[0],
-                actualHash: zippyOutput.split("  ")[0]
+                expectedHash: standardOutput,
+                actualHash: zippyOutput
             });
         }
     }
@@ -59,7 +73,7 @@ async function runRandomGeneratedTests() {
 
     const fileConfigs = [
         {fileSize: 0, repetitions: 1},
-        {fileSize: 1, repetitions: 10},
+        {fileSize: 1, repetitions: 1},
         {fileSize: 2, repetitions: 10},
         {fileSize: 10, repetitions: 10},
         {fileSize: 54, repetitions: 10},
@@ -85,17 +99,19 @@ async function runRandomGeneratedTests() {
                 const filePath = await generateTestFile(testSuitsDirectory, config.fileSize, i);
 
                 // Execute standard utility
-                const standardOutput = cp.execSync(`/usr/local/bin/shasum -a 256 ${filePath}`).toString("utf-8");
+                const standardOutput = standardAlgorithmCommands[algorithm].parser(
+                    cp.execSync(`${standardAlgorithmCommands[algorithm].command} ${filePath}`).toString("utf-8").split("  ")[0]
+                );
 
                 // Execute zippy
-                const zippyOutput = cp.execSync(`out/zippy ${filePath}`).toString("utf-8");
+                const zippyOutput = cp.execSync(`out/zippy ${algorithm} ${filePath}`).toString("utf-8").trim();
 
                 // Comparing the results
                 if (standardOutput !== zippyOutput) {
                     assertions.push({
                         fileSize: config.fileSize,
-                        expectedHash: standardOutput.split("  ")[0],
-                        actualHash: zippyOutput.split("  ")[0]
+                        expectedHash: standardOutput,
+                        actualHash: zippyOutput
                     });
                 }
 

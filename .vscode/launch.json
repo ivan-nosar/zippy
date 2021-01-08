@@ -7,6 +7,7 @@
         {
             "name": "Launch test",
             "program": "${workspaceFolder}/test.js",
+            "args": [ "-a", "md5" ],
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -19,7 +20,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/${config:buildConfig.outputFolder}/${config:buildConfig.executableName}",
-            "args": [],
+            "args": [ "md5", "./testFiles/hello.txt" ],
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
