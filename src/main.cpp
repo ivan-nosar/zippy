@@ -2,6 +2,7 @@
 #include <string>
 
 #include "include/lib/sha256.hpp"
+#include "include/lib/sha512.hpp"
 #include "include/lib/md5.hpp"
 
 using namespace std;
@@ -24,6 +25,9 @@ int main(int argc, char* argv[])
     if (algorithm == "sha256") {
         string stringHash = sha2::sha256(filePath);
         cout << stringHash << endl;
+    } else if (algorithm == "sha512") {
+        string stringHash = sha2::sha512(filePath);
+        cout << stringHash << endl;
     } else if (algorithm == "md5") {
         string stringHash = md::md5(filePath);
         cout << stringHash << endl;
@@ -31,6 +35,8 @@ int main(int argc, char* argv[])
         cout << "Unkonwn algorithm: " << algorithm << endl;
         return 1;
     }
+
+    __int128_t a = 0;
 
     return 0;
 }

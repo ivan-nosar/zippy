@@ -12,6 +12,7 @@ const algorithm = process.argv[algorithmFlagIndex + 1];
 
 const standardAlgorithmCommands = {
     "sha256": { command: "/usr/local/bin/shasum -a 256", parser: (output) => output.split("  ")[0].trim() },
+    "sha512": { command: "/usr/local/bin/shasum -a 512", parser: (output) => output.split("  ")[0].trim() },
     "md5": { command: "/sbin/md5", parser: (output) => output.split(" = ")[1].trim() }
 }
 
@@ -73,7 +74,7 @@ async function runRandomGeneratedTests() {
 
     const fileConfigs = [
         {fileSize: 0, repetitions: 1},
-        {fileSize: 1, repetitions: 1},
+        {fileSize: 1, repetitions: 10},
         {fileSize: 2, repetitions: 10},
         {fileSize: 10, repetitions: 10},
         {fileSize: 54, repetitions: 10},
@@ -84,9 +85,9 @@ async function runRandomGeneratedTests() {
         {fileSize: 128, repetitions: 10},
         {fileSize: 1000, repetitions: 10},
         {fileSize: 5000, repetitions: 10},
-        {fileSize: 10 * 1024 * 1024, repetitions: 2},
-        {fileSize: 50 * 1024 * 1024, repetitions: 2},
-        {fileSize: 100 * 1024 * 1024, repetitions: 2},
+        // {fileSize: 10 * 1024 * 1024, repetitions: 2},
+        // {fileSize: 50 * 1024 * 1024, repetitions: 2},
+        // {fileSize: 100 * 1024 * 1024, repetitions: 2},
         // {fileSize: 1024 * 1024 * 1024, repetitions: 1},
     ];
 

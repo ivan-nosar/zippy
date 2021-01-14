@@ -20,3 +20,18 @@ cmake .
 # you have to keep it mind when you'll try to run the build on Windows
 make
 ```
+
+## Testing
+
+TODO: Add description
+use node 14 (via nvm)
+
+TODO: Setup CI (GitHub Actions)
+
+## Release
+
+Execute the following command in order to build the release version of the program:
+
+```sh
+cmake -DCMAKE_BUILD_TYPE=Release . && make
+```
