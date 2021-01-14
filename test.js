@@ -17,11 +17,11 @@ const standardAlgorithmCommands = {
 }
 
 if (usePredefined) {
-    console.log("Running predefined tests");
+    console.log(`Running predefined tests. Algorithm: ${algorithm}`);
     runPredefinedTests()
         .then(process.exit);
 } else {
-    console.log("Running random generated tests");
+    console.log(`Running random generated tests. Algorithm: ${algorithm}`);
     runRandomGeneratedTests()
         .then(process.exit);
 }
@@ -85,7 +85,7 @@ async function runRandomGeneratedTests() {
         {fileSize: 128, repetitions: 10},
         {fileSize: 1000, repetitions: 10},
         {fileSize: 5000, repetitions: 10},
-        // {fileSize: 10 * 1024 * 1024, repetitions: 2},
+        {fileSize: 10 * 1024 * 1024, repetitions: 2},
         // {fileSize: 50 * 1024 * 1024, repetitions: 2},
         // {fileSize: 100 * 1024 * 1024, repetitions: 2},
         // {fileSize: 1024 * 1024 * 1024, repetitions: 1},
